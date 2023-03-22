@@ -1,2 +1,7 @@
 /venv/
 .idea
+misc.xml
+modules.xml
+MyApp.iml
+profiles_setting.xml
+vcs.xml
