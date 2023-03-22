@@ -1,4 +1,7 @@
+import streamlit
 import streamlit as sq
+import pandas as pd
+
 sq.set_page_config(layout="wide")
 col1, col2 = sq.columns(2)
 with col1:
@@ -10,3 +13,12 @@ with col2:
     sq.write(content, unsafe_allow_html=True)
 
 sq.write("Below you can find some of the apps I have built in Python. Feel free to contact me!")
+
+col3, col4 = sq.columns(2)
+df = pd.read_csv("data.csv", sep=";")
+with col3:
+    for index, row in df[:10].iterrows():
+        sq.title(row["title"])
+with col4:
+    for index, row in df[10:].iterrows():
+        sq.title(row["title"])
